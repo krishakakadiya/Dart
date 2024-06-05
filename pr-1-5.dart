@@ -34,20 +34,55 @@ void main() {
     print("0) FOR EXIT:");
     stdout.write("Enter your choice:");
     choice = int.parse(stdin.readLineSync() ?? "0");
+    switch (choice) {
+      case 1:
+        List.generate(r, (ri) {
+          return List.generate(c, (ci) {
+            sum += l[r][c];
+          });
+        });
+        print("Sum :$sum");
+        break;
+      case 2:
+        int row = 0;
+        List.generate(r, (ri) {
+          return List.generate(c, (ci) {
+            sum += l[row][c];
+          });
+        });
+        print("Sum :$sum");
+        break;
+      case 3:
+        int column = 0;
+        List.generate(r, (ri) {
+          return List.generate(c, (ci) {
+            sum += l[r][column];
+          });
+        });
+        print("Sum :$sum");
+        break;
+      case 4:
+        List.generate(r, (ri) {
+          return List.generate(c, (ci) {
+            if (ri == ci) {
+              sum += l[r][c];
+            }
+          });
+        });
+        print("Sum :$sum");
+        break;
+      case 5:
+        List.generate(r, (ri) {
+          return List.generate(c, (ci) {
+            if (ri + ci == ri - 1) {
+              sum += l[r][c];
+            }
+          });
+        });
+        print("Sum :$sum");
+        break;
+      case 0:
+        break;
+    }
   } while (choice != 0);
-  switch (choice) {
-    case 1:
-      break;
-
-    case 2:
-      break;
-
-    case 3:
-      break;
-
-    case 4:
-      break;
-    case 0:
-      break;
-  }
 }
